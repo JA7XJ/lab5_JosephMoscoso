@@ -498,6 +498,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jb_converc.setText("------>");
+        jb_converc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_convercMouseClicked(evt);
+            }
+        });
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Universo");
         jt_universo.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
@@ -899,34 +904,36 @@ public class principal extends javax.swing.JFrame {
             edad = ((mundod) modeloLista.get(jl_mundodisco.getSelectedIndex())).getPesot();
             int centinela = -1;
             DefaultMutableTreeNode p = new DefaultMutableTreeNode(new mundod(nombre, edad));
-            /*for (int i = 0; i < raiz.getChildCount(); i++) {
-                if (raiz.getChildAt(i).toString().equals(nacionalidad)) {
-                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new persona(nombre, edad, nacionalidad));
-                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
-                    centinela = 1;
-                }
-            }*/
-            //
-            /*for (int i = 0; i < raiz.getChildCount(); i++) {
-                if (raiz.getChildAt(i).toString().equals(nombre)) {
-                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new persona(nombre, edad, nacionalidad));
-                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
-                    centinela = 1;
-                }
-            }*/
-            //
-            /*if (centinela == -1) {
-                DefaultMutableTreeNode n = new DefaultMutableTreeNode(nacionalidad);
-                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new persona(nombre, edad, nacionalidad));
-                n.add(p);
-                raiz.add(n);
-            }*/
             raiz.add(p);
             modeloARBOL.reload();
         } else {
             JOptionPane.showMessageDialog(this, "No hay personas seleccionadas");
         }
     }//GEN-LAST:event_jb_convermMouseClicked
+
+    private void jb_convercMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_convercMouseClicked
+        // TODO add your handling code here:
+        if (jl_criatura.getSelectedIndex() >= 0) {
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jt_universo.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            DefaultListModel modeloLista = (DefaultListModel) jl_criatura.getModel();
+            int posicion=Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la posicion del mundo"));
+            String raza, reg;
+            int energ, maximo, cant;
+            int pes;
+            raza = ((criaturas) modeloLista.get(jl_criatura.getSelectedIndex())).getRaza();
+            pes = ((criaturas) modeloLista.get(jl_criatura.getSelectedIndex())).getPesoc();
+            reg = ((criaturas) modeloLista.get(jl_criatura.getSelectedIndex())).getRegion();
+            energ = ((criaturas) modeloLista.get(jl_criatura.getSelectedIndex())).getNumero();
+            maximo = ((criaturas) modeloLista.get(jl_criatura.getSelectedIndex())).getAños();
+            cant = ((criaturas) modeloLista.get(jl_criatura.getSelectedIndex())).getCantidad();
+            DefaultMutableTreeNode p =new DefaultMutableTreeNode (new criaturas(raza, energ, maximo, reg, cant, pes));
+            ((DefaultMutableTreeNode)raiz.getChildAt(posicion)).add(p);
+            modeloARBOL.reload();
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay personas seleccionadas");
+        }
+    }//GEN-LAST:event_jb_convercMouseClicked
 
     /**
      * @param args the command line arguments
