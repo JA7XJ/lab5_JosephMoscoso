@@ -491,6 +491,11 @@ public class principal extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jl_criatura);
 
         jb_converm.setText("------>");
+        jb_converm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_convermMouseClicked(evt);
+            }
+        });
 
         jb_converc.setText("------>");
 
@@ -880,6 +885,48 @@ public class principal extends javax.swing.JFrame {
     private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
         jd_modificarcriatura.setVisible(false);
     }//GEN-LAST:event_salirMouseClicked
+
+    private void jb_convermMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_convermMouseClicked
+        // TODO add your handling code here:
+        if (jl_mundodisco.getSelectedIndex() >= 0) {
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) jt_universo.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            DefaultListModel modeloLista = (DefaultListModel) jl_mundodisco.getModel();
+            String nacionalidad, nombre;
+            int edad;
+      //      nacionalidad = ((persona) modeloLista.get(jl_personas.getSelectedIndex())).getNacionalidad();
+            nombre = ((mundod) modeloLista.get(jl_mundodisco.getSelectedIndex())).getNombre();
+            edad = ((mundod) modeloLista.get(jl_mundodisco.getSelectedIndex())).getPesot();
+            int centinela = -1;
+            DefaultMutableTreeNode p = new DefaultMutableTreeNode(new mundod(nombre, edad));
+            /*for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(nacionalidad)) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new persona(nombre, edad, nacionalidad));
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                    centinela = 1;
+                }
+            }*/
+            //
+            /*for (int i = 0; i < raiz.getChildCount(); i++) {
+                if (raiz.getChildAt(i).toString().equals(nombre)) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(new persona(nombre, edad, nacionalidad));
+                    ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(p);
+                    centinela = 1;
+                }
+            }*/
+            //
+            /*if (centinela == -1) {
+                DefaultMutableTreeNode n = new DefaultMutableTreeNode(nacionalidad);
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(new persona(nombre, edad, nacionalidad));
+                n.add(p);
+                raiz.add(n);
+            }*/
+            raiz.add(p);
+            modeloARBOL.reload();
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay personas seleccionadas");
+        }
+    }//GEN-LAST:event_jb_convermMouseClicked
 
     /**
      * @param args the command line arguments
