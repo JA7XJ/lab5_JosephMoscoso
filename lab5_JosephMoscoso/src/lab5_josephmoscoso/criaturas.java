@@ -17,17 +17,19 @@ public class criaturas {
     private int años;
     private String region;
     private int cantidad;
+    private int pesoc;
     ArrayList l=new ArrayList();
 
     public criaturas() {
     }
 
-    public criaturas(String raza, int numero, int años, String region, int cantidad) {
+    public criaturas(String raza, int numero, int años, String region, int cantidad, int pesoc) {
         this.raza = raza;
         this.numero = numero;
         this.años = años;
         this.region = region;
         this.cantidad = cantidad;
+        this.pesoc = pesoc;
     }
 
     public String getRaza() {
@@ -70,6 +72,14 @@ public class criaturas {
         this.cantidad = cantidad;
     }
 
+    public int getPesoc() {
+        return pesoc;
+    }
+
+    public void setPesoc(int pesoc) {
+        this.pesoc = pesoc;
+    }
+    
     public ArrayList getL() {
         return l;
     }
