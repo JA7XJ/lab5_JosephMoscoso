@@ -72,6 +72,14 @@ public class principal extends javax.swing.JFrame {
         popupmun = new javax.swing.JPopupMenu();
         mm_modificar = new javax.swing.JMenuItem();
         mm_eliminar = new javax.swing.JMenuItem();
+        jd_modificarcriatura = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        raza = new javax.swing.JButton();
+        energia = new javax.swing.JButton();
+        años = new javax.swing.JButton();
+        region = new javax.swing.JButton();
+        vivas = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jb_mundodisco = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -257,9 +265,19 @@ public class principal extends javax.swing.JFrame {
         );
 
         m_modificar.setText("Modificar");
+        m_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m_modificarActionPerformed(evt);
+            }
+        });
         menupop.add(m_modificar);
 
         m_eliminar.setText("Eliminar");
+        m_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m_eliminarActionPerformed(evt);
+            }
+        });
         menupop.add(m_eliminar);
 
         t_modificar.setText("Modificar");
@@ -339,6 +357,103 @@ public class principal extends javax.swing.JFrame {
             }
         });
         popupmun.add(mm_eliminar);
+
+        jLabel15.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel15.setText("Presione un boton para editar");
+
+        raza.setText("Raza");
+        raza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                razaMouseClicked(evt);
+            }
+        });
+
+        energia.setText("Numero de energia");
+        energia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                energiaMouseClicked(evt);
+            }
+        });
+
+        años.setText("Numero maximo de años");
+        años.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                añosMouseClicked(evt);
+            }
+        });
+
+        region.setText("Nombre de la region");
+        region.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                regionMouseClicked(evt);
+            }
+        });
+
+        vivas.setText("Cantidad de especies vivas");
+        vivas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vivasMouseClicked(evt);
+            }
+        });
+
+        salir.setText("Salir");
+        salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_modificarcriaturaLayout = new javax.swing.GroupLayout(jd_modificarcriatura.getContentPane());
+        jd_modificarcriatura.getContentPane().setLayout(jd_modificarcriaturaLayout);
+        jd_modificarcriaturaLayout.setHorizontalGroup(
+            jd_modificarcriaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                .addGroup(jd_modificarcriaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel15))
+                    .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                        .addGap(246, 246, 246)
+                        .addComponent(raza, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(energia))
+                    .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addGroup(jd_modificarcriaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(region))
+                            .addComponent(años))))
+                .addContainerGap(138, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_modificarcriaturaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(vivas, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                .addGap(278, 278, 278)
+                .addComponent(salir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jd_modificarcriaturaLayout.setVerticalGroup(
+            jd_modificarcriaturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modificarcriaturaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addComponent(raza)
+                .addGap(18, 18, 18)
+                .addComponent(energia)
+                .addGap(18, 18, 18)
+                .addComponent(años)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(region)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(vivas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(salir)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -550,13 +665,17 @@ public class principal extends javax.swing.JFrame {
 
     private void jl_mundodiscoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_mundodiscoMouseClicked
         if (evt.isMetaDown()) {
-            popupmun.show(evt.getComponent(), evt.getX(), evt.getY());
+            if (jl_mundodisco.getSelectedIndex() >= 0) {
+                popupmun.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
         }
     }//GEN-LAST:event_jl_mundodiscoMouseClicked
 
     private void jl_criaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_criaturaMouseClicked
         if (evt.isMetaDown()) {
-            menupop.show(evt.getComponent(), evt.getX(), evt.getY());
+            if (jl_criatura.getSelectedIndex() >= 0) {
+                menupop.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
         }
     }//GEN-LAST:event_jl_criaturaMouseClicked
 
@@ -569,7 +688,7 @@ public class principal extends javax.swing.JFrame {
 
     private void mm_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mm_modificarActionPerformed
         // TODO add your handling code here:
-        String nombre="";
+        String nombre = "";
         if (jl_mundodisco.getSelectedIndex() >= 0) {
             try {
                 nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre");
@@ -597,6 +716,170 @@ public class principal extends javax.swing.JFrame {
             modelo.remove(jl_mundodisco.getSelectedIndex());
         }
     }//GEN-LAST:event_mm_eliminarActionPerformed
+
+    private void m_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_modificarActionPerformed
+        // TODO add your handling code here:
+        if (jl_criatura.getSelectedIndex() >= 0) {
+            jd_modificarcriatura.setModal(true);
+            jd_modificarcriatura.pack();
+            jd_modificarcriatura.setLocationRelativeTo(this);
+            jd_modificarcriatura.setVisible(true);
+        }
+    }//GEN-LAST:event_m_modificarActionPerformed
+
+    private void m_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_eliminarActionPerformed
+        // TODO add your handling code here:
+        if (jl_criatura.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_criatura.getModel();
+            int c = jl_criatura.getSelectedIndex();
+            modelo.remove(jl_criatura.getSelectedIndex());
+        }
+    }//GEN-LAST:event_m_eliminarActionPerformed
+
+    private void razaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_razaMouseClicked
+        // TODO add your handling code here:
+        String nombre = "";
+        //if (jl_mundodisco.getSelectedIndex() >= 0) {
+        try {
+            nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre de la raza");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, dato incorrecto");
+        }
+        DefaultListModel modelo = (DefaultListModel) jl_criatura.getModel();
+        int numero = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getNumero();
+        int años = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getAños();
+        String nac = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRegion();
+        int cantidad = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getCantidad();
+        int peso = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getPesoc();
+        criaturas x = new criaturas(nombre, numero, años, nac, cantidad, peso);
+        int c = jl_criatura.getSelectedIndex();
+        modelo.setElementAt(x, c);
+        jl_criatura.setModel(modelo);
+        jtf_raza.setText("");
+        jtf_numeroe.setText("");
+        jtf_edadm.setText("");
+        jtf_region.setText("");
+        jtf_cantv.setText("");
+        jtf_pesoc.setText("");
+        // }
+    }//GEN-LAST:event_razaMouseClicked
+
+    private void energiaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_energiaMouseClicked
+        // TODO add your handling code here:
+        int nombre = 0;
+        //if (jl_mundodisco.getSelectedIndex() >= 0) {
+        try {
+            nombre = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la nueva energia"));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, dato incorrecto");
+        }
+        DefaultListModel modelo = (DefaultListModel) jl_criatura.getModel();
+        String numero = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRaza();
+        int años = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getAños();
+        String nac = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRegion();
+        int cantidad = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getCantidad();
+        int peso = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getPesoc();
+        criaturas x = new criaturas(numero, nombre, años, nac, cantidad, peso);
+        int c = jl_criatura.getSelectedIndex();
+        modelo.setElementAt(x, c);
+        jl_criatura.setModel(modelo);
+        jtf_raza.setText("");
+        jtf_numeroe.setText("");
+        jtf_edadm.setText("");
+        jtf_region.setText("");
+        jtf_cantv.setText("");
+        jtf_pesoc.setText("");
+        //}
+    }//GEN-LAST:event_energiaMouseClicked
+
+    private void añosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_añosMouseClicked
+        // TODO add your handling code here:
+        int nombre = 0;
+        //if (jl_mundodisco.getSelectedIndex() >= 0) {
+        try {
+            nombre = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese el nuevo año"));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, dato incorrecto");
+        }
+        DefaultListModel modelo = (DefaultListModel) jl_criatura.getModel();
+        String numero = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRaza();
+        int años = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getNumero();
+        String nac = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRegion();
+        int cantidad = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getCantidad();
+        int peso = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getPesoc();
+        criaturas x = new criaturas(numero, años, nombre, nac, cantidad, peso);
+        int c = jl_criatura.getSelectedIndex();
+        modelo.setElementAt(x, c);
+        jl_criatura.setModel(modelo);
+        jtf_raza.setText("");
+        jtf_numeroe.setText("");
+        jtf_edadm.setText("");
+        jtf_region.setText("");
+        jtf_cantv.setText("");
+        jtf_pesoc.setText("");
+        // }
+    }//GEN-LAST:event_añosMouseClicked
+
+    private void regionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionMouseClicked
+        // TODO add your handling code here:
+        String nombre = "";
+        //if (jl_mundodisco.getSelectedIndex() >= 0) {
+        try {
+            nombre = JOptionPane.showInputDialog(this, "Ingrese el nombre de la region");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, dato incorrecto");
+        }
+        DefaultListModel modelo = (DefaultListModel) jl_criatura.getModel();
+
+        int numero = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getNumero();
+        int años = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getAños();
+        String nac = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRaza();
+        int cantidad = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getCantidad();
+        int peso = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getPesoc();
+        criaturas x = new criaturas(nac, numero, años, nombre, cantidad, peso);
+        int c = jl_criatura.getSelectedIndex();
+        modelo.setElementAt(x, c);
+        jl_criatura.setModel(modelo);
+        jtf_raza.setText("");
+        jtf_numeroe.setText("");
+        jtf_edadm.setText("");
+        jtf_region.setText("");
+        jtf_cantv.setText("");
+        jtf_pesoc.setText("");
+        //}
+    }//GEN-LAST:event_regionMouseClicked
+
+    private void vivasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vivasMouseClicked
+        // TODO add your handling code here:
+        int nombre = 0;
+        //if (jl_mundodisco.getSelectedIndex() >= 0) {
+        try {
+            nombre = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la cantidad de especies vivas"));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error, dato incorrecto");
+        }
+        DefaultListModel modelo = (DefaultListModel) jl_criatura.getModel();
+        String numero = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRaza();
+        int años = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getNumero();
+        String nac = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getRegion();
+        int cantidad = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getAños();
+        int peso = ((criaturas) modelo.get(jl_criatura.getSelectedIndex())).getPesoc();
+        criaturas x = new criaturas(numero, años, cantidad, nac, nombre, peso);
+        int c = jl_criatura.getSelectedIndex();
+        modelo.setElementAt(x, c);
+        jl_criatura.setModel(modelo);
+        jtf_raza.setText("");
+        jtf_numeroe.setText("");
+        jtf_edadm.setText("");
+        jtf_region.setText("");
+        jtf_cantv.setText("");
+        jtf_pesoc.setText("");
+        //}
+    }//GEN-LAST:event_vivasMouseClicked
+
+    private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
+        jd_modificarcriatura.setVisible(false);
+    }//GEN-LAST:event_salirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -635,7 +918,9 @@ public class principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregar_u;
+    private javax.swing.JButton años;
     private javax.swing.JButton criaturaagregar;
+    private javax.swing.JButton energia;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -643,6 +928,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -662,6 +948,7 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_mundodisco;
     private javax.swing.JButton jb_universo;
     private javax.swing.JDialog jd_criatura;
+    private javax.swing.JDialog jd_modificarcriatura;
     private javax.swing.JDialog jd_mundod;
     private javax.swing.JDialog jd_universo;
     private javax.swing.JList<String> jl_criatura;
@@ -684,7 +971,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mm_modificar;
     private javax.swing.JPopupMenu poparbol;
     private javax.swing.JPopupMenu popupmun;
+    private javax.swing.JButton raza;
+    private javax.swing.JButton region;
+    private javax.swing.JButton salir;
     private javax.swing.JMenuItem t_eliminar;
     private javax.swing.JMenuItem t_modificar;
+    private javax.swing.JButton vivas;
     // End of variables declaration//GEN-END:variables
 }
