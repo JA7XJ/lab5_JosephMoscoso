@@ -28,6 +28,14 @@ public class principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jd_mundod = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jtf_nombretor = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jtf_edad = new javax.swing.JTextField();
+        jb_agregartt = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jb_mundodisco = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -51,12 +59,70 @@ public class principal extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jRadioButton1.setText("jRadioButton1");
+
+        jLabel2.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel2.setText("Agregar Mundo Disco");
+
+        jLabel3.setText("Nombre de la tortuga");
+
+        jLabel4.setText("Peso de la tortuga");
+
+        jb_agregartt.setText("Agregar");
+
+        javax.swing.GroupLayout jd_mundodLayout = new javax.swing.GroupLayout(jd_mundod.getContentPane());
+        jd_mundod.getContentPane().setLayout(jd_mundodLayout);
+        jd_mundodLayout.setHorizontalGroup(
+            jd_mundodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_mundodLayout.createSequentialGroup()
+                .addGroup(jd_mundodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_mundodLayout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(jLabel2))
+                    .addGroup(jd_mundodLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_nombretor, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_mundodLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jtf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_mundodLayout.createSequentialGroup()
+                        .addGap(185, 185, 185)
+                        .addComponent(jb_agregartt)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jd_mundodLayout.setVerticalGroup(
+            jd_mundodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_mundodLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(jd_mundodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jtf_nombretor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(jd_mundodLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jtf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jb_agregartt)
+                .addGap(47, 47, 47))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         jLabel1.setText("Registro criaturas");
 
         jb_mundodisco.setText("Agregar Mundo Disco");
+        jb_mundodisco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_mundodiscoMouseClicked(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(jl_mundodisco);
 
@@ -136,6 +202,14 @@ public class principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jb_mundodiscoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_mundodiscoMouseClicked
+        // TODO add your handling code here:
+        jd_mundod.setModal(true);
+        jd_mundod.pack();
+        jd_mundod.setLocationRelativeTo(this);
+        jd_mundod.setVisible(true);
+    }//GEN-LAST:event_jb_mundodiscoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -174,15 +248,23 @@ public class principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JButton jb_agregartt;
     private javax.swing.JButton jb_converc;
     private javax.swing.JButton jb_converm;
     private javax.swing.JButton jb_mundodisco;
+    private javax.swing.JDialog jd_mundod;
     private javax.swing.JList<String> jl_mundodisco;
     private javax.swing.JTree jt_universo;
+    private javax.swing.JTextField jtf_edad;
+    private javax.swing.JTextField jtf_nombretor;
     // End of variables declaration//GEN-END:variables
 }
