@@ -69,6 +69,9 @@ public class principal extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jtf_edadu = new javax.swing.JTextField();
         agregar_u = new javax.swing.JButton();
+        popupmun = new javax.swing.JPopupMenu();
+        mm_modificar = new javax.swing.JMenuItem();
+        mm_eliminar = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jb_mundodisco = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -321,6 +324,22 @@ public class principal extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        mm_modificar.setText("Modificar");
+        mm_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mm_modificarActionPerformed(evt);
+            }
+        });
+        popupmun.add(mm_modificar);
+
+        mm_eliminar.setText("Eliminar");
+        mm_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mm_eliminarActionPerformed(evt);
+            }
+        });
+        popupmun.add(mm_eliminar);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -334,6 +353,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jl_mundodisco.setModel(new DefaultListModel());
+        jl_mundodisco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_mundodiscoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jl_mundodisco);
 
         jButton1.setText("Agregar criatura");
@@ -344,6 +368,11 @@ public class principal extends javax.swing.JFrame {
         });
 
         jl_criatura.setModel(new DefaultListModel());
+        jl_criatura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jl_criaturaMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jl_criatura);
 
         jb_converm.setText("------>");
@@ -352,6 +381,11 @@ public class principal extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Universo");
         jt_universo.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jt_universo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_universoMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jt_universo);
 
         jb_universo.setText("Agregar Universo");
@@ -495,10 +529,10 @@ public class principal extends javax.swing.JFrame {
             jd_universo.pack();
             jd_universo.setLocationRelativeTo(this);
             jd_universo.setVisible(true);
-        }else{
+        }/*else{
             JOptionPane.showMessageDialog(this, "Error, ya hay un universo creado");
-        }
-        
+        }*/
+
     }//GEN-LAST:event_jb_universoMouseClicked
 
     private void agregar_uMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregar_uMouseClicked
@@ -513,6 +547,56 @@ public class principal extends javax.swing.JFrame {
         jb_universo.setEnabled(false);
         jd_universo.setVisible(false);
     }//GEN-LAST:event_agregar_uMouseClicked
+
+    private void jl_mundodiscoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_mundodiscoMouseClicked
+        if (evt.isMetaDown()) {
+            popupmun.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jl_mundodiscoMouseClicked
+
+    private void jl_criaturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_criaturaMouseClicked
+        if (evt.isMetaDown()) {
+            menupop.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jl_criaturaMouseClicked
+
+    private void jt_universoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_universoMouseClicked
+        // TODO add your handling code here:
+        if (evt.isMetaDown()) {
+            poparbol.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }//GEN-LAST:event_jt_universoMouseClicked
+
+    private void mm_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mm_modificarActionPerformed
+        // TODO add your handling code here:
+        String nombre="";
+        if (jl_mundodisco.getSelectedIndex() >= 0) {
+            try {
+                nombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Error, dato incorrecto");
+            }
+            DefaultListModel modelo = (DefaultListModel) jl_mundodisco.getModel();
+            String nac = ((mundod) modelo.get(jl_mundodisco.getSelectedIndex())).getNombre();
+            int peso = ((mundod) modelo.get(jl_mundodisco.getSelectedIndex())).getPesot();
+            mundod x = new mundod(nombre, peso);
+            int c = jl_mundodisco.getSelectedIndex();
+            modelo.setElementAt(x, c);
+            jl_mundodisco.setModel(modelo);
+            jtf_nombretor.setText("");
+            jtf_pesotor.setText("");
+        }
+
+    }//GEN-LAST:event_mm_modificarActionPerformed
+
+    private void mm_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mm_eliminarActionPerformed
+        // TODO add your handling code here:
+        if (jl_mundodisco.getSelectedIndex() >= 0) {
+            DefaultListModel modelo = (DefaultListModel) jl_mundodisco.getModel();
+            int c = jl_mundodisco.getSelectedIndex();
+            modelo.remove(jl_mundodisco.getSelectedIndex());
+        }
+    }//GEN-LAST:event_mm_eliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -596,7 +680,10 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem m_eliminar;
     private javax.swing.JMenuItem m_modificar;
     private javax.swing.JPopupMenu menupop;
+    private javax.swing.JMenuItem mm_eliminar;
+    private javax.swing.JMenuItem mm_modificar;
     private javax.swing.JPopupMenu poparbol;
+    private javax.swing.JPopupMenu popupmun;
     private javax.swing.JMenuItem t_eliminar;
     private javax.swing.JMenuItem t_modificar;
     // End of variables declaration//GEN-END:variables
