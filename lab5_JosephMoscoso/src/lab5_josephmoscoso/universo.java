@@ -49,7 +49,7 @@ public class universo {
 
     @Override
     public String toString() {
-        return "universo{" + "codigo=" + codigo + ", edaduniverso=" + edaduniverso + ", pesouniverso=" + pesouniverso + '}';
+        return "Codigo universo: "+codigo;
     }
     
 }
