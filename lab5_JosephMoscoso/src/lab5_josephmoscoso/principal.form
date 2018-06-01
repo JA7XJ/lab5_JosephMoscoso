@@ -284,17 +284,11 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="m_modificarActionPerformed"/>
-          </Events>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="m_eliminar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="m_eliminarActionPerformed"/>
-          </Events>
         </MenuItem>
       </SubComponents>
     </Container>
@@ -414,143 +408,12 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mm_modificarActionPerformed"/>
-          </Events>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="mm_eliminar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Eliminar"/>
+            <Property name="text" type="java.lang.String" value="jMenuItem2"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mm_eliminarActionPerformed"/>
-          </Events>
         </MenuItem>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JDialog" name="jd_modificarcriatura">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
-                          <Component id="raza" min="-2" pref="117" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
-                          <Component id="energia" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                  <Component id="region" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="años" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="138" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="vivas" min="-2" pref="204" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
-                  <Component id="salir" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="raza" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="energia" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="años" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="region" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="vivas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="salir" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="18" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel15">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Ubuntu" size="24" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Presione un boton para editar"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="raza">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Raza"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="razaMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="energia">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Numero de energia"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="energiaMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="a&#xf1;os">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Numero maximo de a&#xf1;os"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="a&#xf1;osMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="region">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Nombre de la region"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="regionMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="vivas">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cantidad de especies vivas"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="vivasMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="salir">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Salir"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="salirMouseClicked"/>
-          </Events>
-        </Component>
       </SubComponents>
     </Container>
   </NonVisualComponents>
@@ -763,9 +626,6 @@
               <TreeModel code="Universo"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jt_universoMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
