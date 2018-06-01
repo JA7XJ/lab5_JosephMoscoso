@@ -50,7 +50,7 @@ public class mundod {
 
     @Override
     public String toString() {
-        return "mundod{" + "nombre=" + nombre + ", pesot=" + pesot + ", cr=" + cr + '}';
+        return nombre;
     }
     
 }
