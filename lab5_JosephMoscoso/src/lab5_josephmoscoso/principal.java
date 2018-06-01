@@ -897,12 +897,10 @@ public class principal extends javax.swing.JFrame {
             DefaultTreeModel modeloARBOL = (DefaultTreeModel) jt_universo.getModel();
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
             DefaultListModel modeloLista = (DefaultListModel) jl_mundodisco.getModel();
-            String nacionalidad, nombre;
+            String nombre;
             int edad;
-      //      nacionalidad = ((persona) modeloLista.get(jl_personas.getSelectedIndex())).getNacionalidad();
             nombre = ((mundod) modeloLista.get(jl_mundodisco.getSelectedIndex())).getNombre();
             edad = ((mundod) modeloLista.get(jl_mundodisco.getSelectedIndex())).getPesot();
-            int centinela = -1;
             DefaultMutableTreeNode p = new DefaultMutableTreeNode(new mundod(nombre, edad));
             raiz.add(p);
             modeloARBOL.reload();
